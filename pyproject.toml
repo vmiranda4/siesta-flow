@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siesta-flow"
+version = "0.1.0"
+description = "Automated workflow for SIESTA calculations from CIF to DOS/optical analysis"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "click >=8.0",
+    "numpy",
+    "pandas",
+    "ase",
+    "pyyaml"
+]
+
+[project.scripts]
+siesta-flow = "siesta_flow.cli:main"
