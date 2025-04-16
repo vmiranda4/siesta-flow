@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: siesta-flow
+Version: 0.1.0
+Summary: Automated workflow for SIESTA calculations from CIF to DOS/optical analysis
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: ase
+Requires-Dist: pyyaml
+
+# Siesta Flow
+
+A CLI-based workflow automation tool for SIESTA calculations.
