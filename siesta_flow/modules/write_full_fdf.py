@@ -93,7 +93,7 @@ def system_options_fdf(options:dict = None)-> str:
         "n1": "3",
         "n2": "3",
         "n3": "1",
-        "Diag_Algorithm": "MRR",
+        "Diag_Algorithm": "RRR",
         "NumberOfEigenStates": "-10"
     }
 
@@ -197,7 +197,10 @@ Optical.PolarizationType {defaults['Optical_PolarizationType']}
 def dos_fdf(options:dict = None)-> str:
     # Dictionary with default values (can be modified by parameters)
     defaults = {
-        "DOS_vector": "-15.0 6.000 0.06   4000 eV"
+        "DOS_vector": "-15.0 6.000 0.06   4000 eV",
+        "grid1": "1",
+        "grid2": "1",
+        "grid3": "1",
     }
     if options:
         #Update the dictionary with the provided parameters
@@ -207,9 +210,9 @@ def dos_fdf(options:dict = None)-> str:
 #  DOS
 #------------------------------------------------------------------------------------------------
 %block PDOS.kgrid_Monkhorst_Pack
-   1  0  0  0.0
-   0  1  0  0.0 
-   0  0  1  0.0
+   {defaults['grid1']}  0  0  0.0
+   0  {defaults['grid2']}  0  0.0 
+   0  0  {defaults['grid3']}  0.0
 %endblock PDOS.kgrid_Monkhorst_Pack
 
 %block ProjectedDensityOfStates
