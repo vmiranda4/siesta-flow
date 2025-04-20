@@ -46,14 +46,14 @@ def generate_fdf(input_path: str, calc_type: str, output_path: str, param_overri
 
     # Get the calculation-specific blocks
     blocks = get_blocks_for_type(calc_type, param_overrides)
-    
+
     # Combine the structure content with the calculation-specific blocks
     full_fdf_content = structure_content + "\n" + "\n".join(blocks)
 
     # Write the full FDF content to the output file
     with open(output_path, "w") as f:
         f.write(full_fdf_content)
-    print(f"✔ Generated: {output_path}")
+    #print(f"✔ Generated: {output_path}")
 
 
 

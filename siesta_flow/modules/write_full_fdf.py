@@ -172,7 +172,8 @@ def optical_fdf(options:dict = None)-> str:
     if options:
         #Update the dictionary with the provided parameters
         defaults.update(options)
-        return f"""
+    
+    return f"""
 ##-------------------------------------
 #   Optical
 ##-------------------------------------

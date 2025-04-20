@@ -31,18 +31,21 @@ def build_fdf(input_dir, calc_type, output_dir, param):
 
     generate_fdf_from_structure_dir(input_dir, calc_type, output_dir, param_overrides)
 
+@main.command()
+@click.option('--input-dir', required=True, type=click.Path(exists=True, file_okay=False), help='Directory containing .out files.')
+@click.option('--output-dir', required=True, type=click.Path(file_okay=False), help='Directory to save relaxed coordinates as .fdf files.')
+def extract_from_out(input_dir, output_dir):
+    """Extract relaxed structures from .out files into .fdf format."""
+    click.echo(f"[SIESTA-FLOW] Extracting relaxed structures from '{input_dir}' -> '{output_dir}'")
+    
+    from siesta_flow.workflows.extract_relaxed import run_extract_relaxed
+    run_extract_relaxed(input_dir, output_dir)
 
 @main.command()
 def relax():
     """Run structure relaxation calculations."""
     click.echo("[SIESTA-FLOW] Running structure relaxation...")
     # Placeholder - run relaxation step
-
-@main.command()
-def extract():
-    """Extract relaxed coordinates from .out files."""
-    click.echo("[SIESTA-FLOW] Extracting relaxed coordinates...")
-    # Placeholder - extract from .out to new .fdf
 
 @main.command()
 def optical():
