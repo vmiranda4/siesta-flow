@@ -52,6 +52,7 @@ def cif_to_fdf_string(cif_path: Path) -> str:
     # Compose FDF content
     lines = []
     lines.append(f'SystemName {system_label}')
+    lines.append(f'SystemLabel {system_label}')
     lines.append(f'NumberOfAtoms {len(atom_symbols)}')
     lines.append(f'NumberOfSpecies {number_species}')
     lines.append('%block ChemicalSpeciesLabel')

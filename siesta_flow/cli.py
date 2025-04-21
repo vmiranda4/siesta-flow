@@ -2,7 +2,11 @@ import click
 
 @click.group()
 def main():
-    """SIESTA Flow - Automate your SIESTA workflows from CIF to results."""
+    """SIESTA Flow - Automate your SIESTA workflows from CIF to results.\n
+    🌷  🌸  🌼  🌻  🌺\n
+      ~ Siesta Flow ~\n
+    🌺  🌻  🌼  🌸  🌷\n
+    """
     pass
 
 @main.command()
@@ -40,24 +44,6 @@ def extract_from_out(input_dir, output_dir):
     
     from siesta_flow.workflows.extract_relaxed import run_extract_relaxed
     run_extract_relaxed(input_dir, output_dir)
-
-@main.command()
-def relax():
-    """Run structure relaxation calculations."""
-    click.echo("[SIESTA-FLOW] Running structure relaxation...")
-    # Placeholder - run relaxation step
-
-@main.command()
-def optical():
-    """Run optical properties calculation."""
-    click.echo("[SIESTA-FLOW] Running optical calculations...")
-    # Placeholder - use relaxed structure for optics
-
-@main.command()
-def dos():
-    """Run density of states (DOS) calculation."""
-    click.echo("[SIESTA-FLOW] Running DOS calculations...")
-    # Placeholder - use relaxed structure for DOS
 
 if __name__ == '__main__':
     main()
