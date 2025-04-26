@@ -93,7 +93,7 @@ def system_options_fdf(options:dict = None)-> str:
         "n1": "3",
         "n2": "3",
         "n3": "1",
-        "Diag_Algorithm": "RRR",
+        "Diag_Algorithm": "MRRR",
         "NumberOfEigenStates": "-10"
     }
 
