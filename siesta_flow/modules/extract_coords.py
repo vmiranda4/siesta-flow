@@ -16,14 +16,18 @@ def extract_relaxed_structure_from_out(out_file_path: str)-> str:
         if line.startswith("LatticeConstant"):
             break
 
-    # 2. Extract lattice parameters
+    reversed_lines = reversed(lines)
+
     lengths = None
     angles = None
-    for line in lines:
-        if "outcell: Cell vector modules" in line:
-            lengths = line.rsplit(":", 1)[-1].strip().split()
-        elif "outcell: Cell angles" in line:
+
+    for line in reversed_lines:
+        if angles is None and "outcell: Cell angles" in line:
             angles = line.rsplit(":", 1)[-1].strip().split()
+            print(angles)
+        elif lengths is None and "outcell: Cell vector modules" in line:
+            lengths = line.rsplit(":", 1)[-1].strip().split()
+            print(lengths)
         if lengths and angles:
             break
 
