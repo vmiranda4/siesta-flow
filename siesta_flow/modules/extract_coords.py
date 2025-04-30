@@ -49,7 +49,7 @@ def extract_relaxed_structure_from_out(out_file_path: str)-> str:
             coords_started = True
             continue
         if coords_started:
-            if "outcell: Unit cell vectors" in line:
+            if line.strip() == "":
                 break
             output_lines.append(line)
 
